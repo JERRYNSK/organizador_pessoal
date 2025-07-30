@@ -34,5 +34,5 @@ fi
 #só quando tudo aquilo terminar é q eu vou mover o tar 
 if [[ $can_mv == true ]]; then
     mv "$dir_img/imagens$data.tar.gz" $dir_bck
-    rm -f $dir_img/*s #remove as imagens que estavam lá
+    rm -f $dir_img/* #remove as imagens que estavam lá
 fi
