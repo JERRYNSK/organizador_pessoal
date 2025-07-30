@@ -9,7 +9,7 @@ dir_bck=organizados/backups
 data=$(date +%Y%m%d)
 #cria um log
 touch "$dir_log/limpeza_e_backup_$data.log" 
-can_mv=false
+can_mv=false #variavel de controle
 
 #condicao que verifica se o diretorio tá vazio
 if ! [ -z "$( ls -A "$dir_img")" ]; then
@@ -34,4 +34,5 @@ fi
 #só quando tudo aquilo terminar é q eu vou mover o tar 
 if [[ $can_mv == true ]]; then
     mv "$dir_img/imagens$data.tar.gz" $dir_bck
+    rm -f $dir_img/*s #remove as imagens que estavam lá
 fi
